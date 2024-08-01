@@ -1,0 +1,21 @@
+<mvc:View controllerName="demo.suresh.compconsumer.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:f="sap.ui.layout.form">
+    <Page id="page" title="{i18n>title}">
+        <content>
+            <f:SimpleForm id="frmConsumer"
+                editable="true"
+                layout="ResponsiveLayout"
+                title="Consuming App" >
+                <Label id="lblParentCustomerID" text="Customer ID"/>
+                <Input id="inputParentCustomerID" value="{local>/CustomerID}"/>
+                <Button id="btnGo" text="Go" press="onGo"/>
+            </f:SimpleForm>
+            <VBox id="vboxCompCont">
+                <core:ComponentContainer id="customerDetailContainer" propagateModel="true" />
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>
