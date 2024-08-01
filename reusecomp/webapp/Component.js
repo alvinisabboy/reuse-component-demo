@@ -46,8 +46,8 @@ sap.ui.define([
             setCustomerID: function (sCustomerID) {
                 if(sCustomerID !== this.getCustomerID()){
                     this.setProperty("customerID", sCustomerID);
-                    this.getStIsAreaVisible() &&
-                    this.getModel("northwind").metadataLoaded().then(this._setViewBinding.bind(this,sCustomerID));
+                    // this.getStIsAreaVisible() &&
+                    // this.getModel("northwind").metadataLoaded().then(this._setViewBinding.bind(this,sCustomerID));
                 }
             },
 

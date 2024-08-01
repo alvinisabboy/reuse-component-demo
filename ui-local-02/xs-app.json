@@ -23,6 +23,11 @@
             "localDir": "../compconsumer/webapp"
         },
         {
+            "source": "^/launchpad/compconsumer02/(.*)$",
+            "target": "$1",
+            "localDir": "../compconsumer02/webapp"
+        },
+        {
             "source": "^/launchpad/(.*)$",
             "target": "$1",
             "localDir": "webapp"

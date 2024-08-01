@@ -35,6 +35,16 @@
                                         "icon": "sap-icon://Fiori2/F0006",
                                         "targetURL": "#Consumer-manage"
                                     }
+                                },
+                                {
+                                    "id": "compconsumer02",
+                                    "tileType": "sap.ushell.ui.tile.StaticTile",
+                                    "properties": {
+                                        "title": "Component Consumer 02",
+                                        "info": "",
+                                        "icon": "sap-icon://Fiori2/F0006",
+                                        "targetURL": "#Consumer02-manage"
+                                    }
                                 }
                             ]
                         }
@@ -51,7 +61,7 @@
             "adapter": {
                 "config": {
                     "inbounds": {
-                        "dataConfigure": {
+                        "myReuseComp": {
                             "semanticObject": "Reusecomp",
                             "action": "manage",
                             "title": "Reuse Component",
@@ -65,7 +75,7 @@
                                 "url": "reusecomp"
                             }
                         },
-                        "specificationManage": {
+                        "myCompConsumer": {
                             "semanticObject": "Consumer",
                             "action": "manage",
                             "title": "Component Consumer",
@@ -77,6 +87,20 @@
                                 "applicationType": "URL",
                                 "additionalInformation": "SAPUI5.Component=demo.suresh.compconsumer",
                                 "url": "compconsumer"
+                            }
+                        },
+                        "myCompConsumer02": {
+                            "semanticObject": "Consumer02",
+                            "action": "manage",
+                            "title": "Component Consumer 02",
+                            "signature": {
+                                "parameters": {},
+                                "additionalParameters": "allowed"
+                            },
+                            "resolutionResult": {
+                                "applicationType": "URL",
+                                "additionalInformation": "SAPUI5.Component=demo.suresh.compconsumer",
+                                "url": "compconsumer02"
                             }
                         }
                     }

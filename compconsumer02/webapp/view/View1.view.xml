@@ -8,9 +8,7 @@
             <f:SimpleForm id="frmConsumer"
                 editable="true"
                 layout="ResponsiveLayout"
-                title="Freight Order App" >
-                <Label id="lblFreightOrderNo" text="Freight Order Number"/>
-                <Input id="inputFreightOrderNo" value=""/>
+                title="Warehouse Management" >
                 <Button id="btnGo" text="Print Preview" press="onGo"/>
             </f:SimpleForm>
             <VBox id="vboxCompCont">
