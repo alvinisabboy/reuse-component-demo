@@ -1,0 +1,11 @@
+{
+	"name": "local.ui.tools",
+	"description": "",
+	"dependencies": {
+		"@sap/approuter": "10.4.2",
+		"request": "latest"
+	},
+	"scripts": {
+		"start": "node localrouter.js"
+	}
+}

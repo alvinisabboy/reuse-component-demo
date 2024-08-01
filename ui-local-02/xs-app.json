@@ -1,0 +1,31 @@
+{
+    "welcomeFile": "launchpad/index.html",
+    "authenticationMethod": "none",
+    "logout": {
+        "logoutEndpoint": "/do/logout"
+    },
+    "routes": [
+        {
+            "source": "^/odata/(.*)$",
+            "destination": "srv_api",
+            "target": "/odata/$1",
+            "authenticationType": "none"
+        },
+        
+        {
+            "source": "^/launchpad/reusecomp/(.*)$",
+            "target": "$1",
+            "localDir": "../reusecomp/webapp"
+        },
+        {
+            "source": "^/launchpad/compconsumer/(.*)$",
+            "target": "$1",
+            "localDir": "../compconsumer/webapp"
+        },
+        {
+            "source": "^/launchpad/(.*)$",
+            "target": "$1",
+            "localDir": "webapp"
+        }
+    ]
+}

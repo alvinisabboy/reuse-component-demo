@@ -1,0 +1,87 @@
+{
+    "services": {
+        "LaunchPage": {
+            "adapter": {
+                "config": {
+                    "groups": [
+                        {
+                            "id": "emptyhome",
+                            "isVisible": false,
+                            "isDefaultGroup": true,
+                            "tiles": []
+                        },
+                        {
+                            "id": "extensions",
+                            "title": "Odata Prototype Apps",
+                            "isVisible": true,
+                            "isGroupLocked": false,
+                            "tiles": [
+                                {
+                                    "id": "reusecomp",
+                                    "tileType": "sap.ushell.ui.tile.StaticTile",
+                                    "properties": {
+                                        "title": "Reuse Component",
+                                        "info": "",
+                                        "icon": "sap-icon://Fiori2/F0006",
+                                        "targetURL": "#Reusecomp-manage"
+                                    }
+                                },
+                                {
+                                    "id": "compconsumer",
+                                    "tileType": "sap.ushell.ui.tile.StaticTile",
+                                    "properties": {
+                                        "title": "Component Consumer",
+                                        "info": "",
+                                        "icon": "sap-icon://Fiori2/F0006",
+                                        "targetURL": "#Consumer-manage"
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        },
+        "NavTargetResolution": {
+            "config": {
+                "enableClientSideTargetResolution": true
+            }
+        },
+        "ClientSideTargetResolution": {
+            "adapter": {
+                "config": {
+                    "inbounds": {
+                        "dataConfigure": {
+                            "semanticObject": "Reusecomp",
+                            "action": "manage",
+                            "title": "Reuse Component",
+                            "signature": {
+                                "parameters": {},
+                                "additionalParameters": "allowed"
+                            },
+                            "resolutionResult": {
+                                "applicationType": "URL",
+                                "additionalInformation": "SAPUI5.Component=demo.suresh.reusecomp",
+                                "url": "reusecomp"
+                            }
+                        },
+                        "specificationManage": {
+                            "semanticObject": "Consumer",
+                            "action": "manage",
+                            "title": "Component Consumer",
+                            "signature": {
+                                "parameters": {},
+                                "additionalParameters": "allowed"
+                            },
+                            "resolutionResult": {
+                                "applicationType": "URL",
+                                "additionalInformation": "SAPUI5.Component=demo.suresh.compconsumer",
+                                "url": "compconsumer"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

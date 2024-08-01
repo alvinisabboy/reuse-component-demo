@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<!-- Copyright (c) 2009-2014 SAP SE, All Rights Reserved -->
+<html class="sapUShellFullHeight">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Launchpad</title>
+    <script>
+        window["sap-ushell-config"] = {
+            defaultRenderer: "fiori2",
+            renderers: {
+                fiori2: {
+                    componentData: {
+                        config: {
+                            enableSearch: false,
+                            enableUserDefaultParameters: true,
+                            rootIntent: "Shell-home"
+                        }
+                    }
+                }
+            },
+            services: {
+                NavTargetResolution: {
+                    config: {
+                        "runStandaloneAppFolderWhitelist": {
+                            "*": true
+                        },
+                        "allowTestUrlComponentConfig": true,
+                        "enableClientSideTargetResolution": true
+                    }
+                },
+                SupportTicket: {
+                    // switched off as the local adapter is not connected to a ticket system
+                    config: {
+                        enabled: false
+                    }
+                },
+                EndUserFeedback: {
+                    adapter: {
+                        config: {
+                            enabled: false
+                        }
+                    }
+                },
+                SmartNavigation: {
+                    config: {
+                        isTrackingEnabled: true
+                    }
+                }
+            },
+            bootstrapPlugins: {
+                RuntimeAuthoringPlugin: {
+                    component: "sap.ushell.plugins.rta",
+                    config: {
+                        validateAppVersion: false
+                    }
+                }
+            }
+        };
+    </script>
+    <!-- src="https://sapui5nightly.int.sap.hana.ondemand.com/resources/sap-ui-core.js" -->
+    <!--  https://sapui5.hana.ondemand.com/resources/sap-ui-core.js -->
+    <!-- src="https://sapui5.hana.ondemand.com/1.108.14/resources/sap-ui-core.js" -->
+    <!-- src="/1.108.14/resources/sap-ui-core.js" -->
+    <script id="sap-ui-bootstrap" src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js"
+        data-sap-ui-evt-oninit="main();" data-sap-ui-libs="sap.m,sap.ushell,sap.ui.fl,sap.ui.core"
+        data-sap-ui-theme="sap_fiori_3" 
+        data-sap-ui-async="true" 
+        data-sap-ui-preload="async"
+        data-sap-ui-bindingSyntax="complex"
+        >
+        </script> 
+
+    <script src="./configmerge.js" id="sap-ushell-bootstrap"></script>
+
+    <script type="text/javascript">
+        /**
+         * Main method to be executed once SAPUI5 has been initialized.
+         */
+        function main() {
+            "use strict";
+            /*global sap */
+            sap.ui.require(["sap/ui/fl/FakeLrepConnector"], function (FakeLrepConnector) {
+                FakeLrepConnector.enableFakeConnector();
+                jQuery.sap.require("sap.ushell.services.Container");
+                window["sap-ushell-config"] = sap.ushell.__sandbox__._adjustApplicationConfiguration(window["sap-ushell-config"]);
+                sap.ushell.bootstrap("local").then(function () {
+                    jQuery.sap.setIcons({
+                        'phone': 'https://sapui5.hana.ondemand.com/1.34.10/resources/sap/ushell/themes/base/img/launchicons/57_iPhone_Desktop_Launch.png',
+                        'phone@2': 'https://sapui5.hana.ondemand.com/1.34.10/resources/sap/ushell/themes/base/img/launchicons/114_iPhone-Retina_Web_Clip.png',
+                        'tablet': 'https://sapui5.hana.ondemand.com/1.34.10/resources/sap/ushell/themes/base/img/launchicons/72_iPad_Desktop_Launch.png',
+                        'tablet@2': 'https://sapui5.hana.ondemand.com/1.34.10/resources/sap/ushell/themes/base/img/launchicons/144_iPad_Retina_Web_Clip.png',
+                        'favicon': 'https://sapui5.hana.ondemand.com/1.34.10/resources/sap/ushell/themes/base/img/launchpad_favicon.ico',
+                        'precomposed': true
+                    });
+                    // load and register Fiori2 icon font
+                    jQuery.sap.require("sap.ushell.iconfonts");
+                    jQuery.sap.require("sap.ushell.services.AppConfiguration");
+                    sap.ushell.iconfonts.registerFiori2IconFont();
+                    // clean fiori loading screen markup before placing main content
+                   // var oContent = sap.ushell.Container.createRenderer();
+
+                    sap.ui.getCore().attachInit(() => {
+                        var oContent = sap.ushell.Container.createRenderer();
+                        oContent.placeAt("content")
+                    })
+                  //  jQuery("#canvas").empty();
+                    //oContent.placeAt("canvas");
+                });
+            });
+        }
+    </script>
+</head>
+
+
+
+
+
+<body class="sapUiBody sapUShellFullHeight" id="content" role="application">
+    <div id="canvas" class="sapUShellFullHeight">
+        <!--  the Fiori2 loading screen for different browsers (as SAPUI5 is not loaded yet, will be replaced by Launchpad):
+                * in pure HTML with CSS animation for modern browsers
+                * animated gif image for <=IE9 (IE10+ doesn't support conditional comments)
+            -->
+        <!--[if IE]>
+                <div id="fiori2-startup-flower" class="sandbox">
+                    <img src="../webapp/resources/sap/ushell/themes/base/img/flower_anim.gif" />
+                </div>
+            <![endif]-->
+        <!--[if !IE]> -->
+        <div id="fiori2-startup-flower" class="sandbox">
+            <div class="fiori2-blossom">
+                <div class="fiori2-leafContainer fiori2-leafContainer1">
+                    <div class="fiori2-leaf fiori2-leaf1"></div>
+                </div>
+                <div class="fiori2-leafContainer fiori2-leafContainer2">
+                    <div class="fiori2-leaf fiori2-leaf2"></div>
+                </div>
+                <div class="fiori2-leafContainer fiori2-leafContainer3">
+                    <div class="fiori2-leaf fiori2-leaf3"></div>
+                </div>
+                <div class="fiori2-leafContainer fiori2-leafContainer4">
+                    <div class="fiori2-leaf fiori2-leaf4"></div>
+                </div>
+                <div class="fiori2-leafContainer fiori2-leafContainer5">
+                    <div class="fiori2-leaf fiori2-leaf5"></div>
+                </div>
+            </div>
+        </div>
+        <!-- <![endif] -->
+    </div>
+</body>
+
+</html>

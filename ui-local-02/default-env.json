@@ -1,0 +1,21 @@
+{
+	"httpHeaders": [
+		{
+			"cache-control": "no-cache, no-store, max-age=0, must-revalidate"
+		}
+	],
+	"account": {},
+	"destinations": [
+		{
+			"name": "srv_api",
+			"url": "http://localhost:8080/",
+			"forwardAuthToken": true,
+			"strictSSL": false
+		}
+	],
+	"VCAP_SERVICES": {
+		"saas-registry": [],
+		"portal": []
+			
+	}
+}

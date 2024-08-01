@@ -1,0 +1,36 @@
+{
+    "welcomeFile": "./index.html",
+    "authenticationMethod": "none",
+    "logout": {
+        "logoutEndpoint": "/do/logout"
+    },
+    "routes": [
+        {
+            "source": "ui-reusecomp/(.*)$",
+            "target": "$1",
+            "localDir": "../ui-reusecomp/webapp"
+        },
+        {
+            "source": "ui-compconsumer/(.*)$",
+            "target": "$1",
+            "localDir": "../ui-compconsumer/webapp"
+        },
+        {
+            "source": "^/odata/v2",
+            "authenticationType": "none",
+            "destination": "srv_api",
+            "csrfProtection": false
+        },
+        {
+            "source": "^/odata/v4",
+            "authenticationType": "none",
+            "destination": "srv_api_v4",
+            "csrfProtection": false
+        },
+        {
+            "source": "index.html",
+            "target": "index.html",
+            "localDir": "./"
+        }
+    ]
+}
