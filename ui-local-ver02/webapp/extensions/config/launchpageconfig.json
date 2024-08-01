@@ -20,7 +20,7 @@
                                     "id": "reusecomp",
                                     "tileType": "sap.ushell.ui.tile.StaticTile",
                                     "properties": {
-                                        "title": "Reuse Component",
+                                        "title": "Printing (Reuse Component)",
                                         "info": "",
                                         "icon": "sap-icon://Fiori2/F0006",
                                         "targetURL": "#Reusecomp-manage"
@@ -30,7 +30,7 @@
                                     "id": "compconsumer",
                                     "tileType": "sap.ushell.ui.tile.StaticTile",
                                     "properties": {
-                                        "title": "Component Consumer",
+                                        "title": "Freight Orders",
                                         "info": "",
                                         "icon": "sap-icon://Fiori2/F0006",
                                         "targetURL": "#Consumer-manage"
@@ -40,7 +40,7 @@
                                     "id": "compconsumer02",
                                     "tileType": "sap.ushell.ui.tile.StaticTile",
                                     "properties": {
-                                        "title": "Component Consumer 02",
+                                        "title": "Warehouse Management",
                                         "info": "",
                                         "icon": "sap-icon://Fiori2/F0006",
                                         "targetURL": "#Consumer02-manage"
@@ -78,7 +78,7 @@
                         "myCompConsumer": {
                             "semanticObject": "Consumer",
                             "action": "manage",
-                            "title": "Component Consumer",
+                            "title": "Freight Orders",
                             "signature": {
                                 "parameters": {},
                                 "additionalParameters": "allowed"
@@ -92,7 +92,7 @@
                         "myCompConsumer02": {
                             "semanticObject": "Consumer02",
                             "action": "manage",
-                            "title": "Component Consumer 02",
+                            "title": "Warehouse Management",
                             "signature": {
                                 "parameters": {},
                                 "additionalParameters": "allowed"

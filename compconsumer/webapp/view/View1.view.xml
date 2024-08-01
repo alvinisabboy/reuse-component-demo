@@ -10,7 +10,7 @@
                 layout="ResponsiveLayout"
                 title="Freight Order App" >
                 <Label id="lblFreightOrderNo" text="Freight Order Number"/>
-                <Input id="inputFreightOrderNo" value=""/>
+                <Input id="inputFreightOrderNo" value="FO137596"/>
                 <Button id="btnGo" text="Print Preview" press="onGo"/>
             </f:SimpleForm>
             <VBox id="vboxCompCont">

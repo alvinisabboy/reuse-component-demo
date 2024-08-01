@@ -13,15 +13,15 @@
                 horizontal="true"
                 vertical="true">
                 <FlexBox direction="Column" renderType="Div" class="sapUiSmallMargin">
+                    <FlexBox>
+                        <Button id="print" text="Print" press=".onCancelFileUploadPressed"/>
+                        <Button id="sendEmail" text="Send Email" press=".onCancelFileUploadPressed"/>
+                    </FlexBox>
                     <PDFViewer source="https://help.sap.com/doc/b48499cd7f514ae08f8ec6167e720e28/SHIP/en-US/8c0aacc643c34aeca2ae0ffe9c99cb0d.pdf" isTrustedSource="true" >
                         <layoutData>
                             <FlexItemData growFactor="1" />
                         </layoutData>
                     </PDFViewer>
-                    <FlexBox>
-                        <Button id="print" text="Print" press=".onCancelFileUploadPressed"/>
-                        <Button id="sendEmail" text="Send Email" press=".onCancelFileUploadPressed"/>
-                    </FlexBox>
                 </FlexBox>
             </ScrollContainer>
             </f:SimpleForm>
